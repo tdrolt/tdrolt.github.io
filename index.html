@@ -1,195 +1,280 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Tudor Oltean's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tudor Oltean — Game Design Portfolio</title>
+	<meta name="description" content="Portfolio of Tudor Oltean, Saxion CMGT student working in game design, 3D modelling and UI/UX.">
+	<meta name="theme-color" content="#070b12">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Tudor Oltean — Game Design Portfolio">
+	<meta property="og:description" content="Saxion CMGT student that shapes the world through games, 3D Modelling and Game Design.">
+	<meta property="og:image" content="images/overpower.png">
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Tudor Oltean</h1>
-						<p>Saxion CMGT student that shapes the world through games, 3D Modelling and Game Design.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/style.css">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="#intro" class="logo">Portfolio</a>
-					</header>
+	<noscript>
+		<!-- Without JS the slide-in panel can never open, so lay the links out inline. -->
+		<style>
+			@media (max-width:736px){
+				.nav__toggle{display:none}
+				.nav__links{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;
+					gap:16px;padding:0 0 12px;background:none;border:0;transform:none;visibility:visible}
+			}
+		</style>
+	</noscript>
+</head>
+<body>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="#intro">Home</a></li>
-							<li><a href="#about">About Me</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-						<ul class="icons">
-							
-							<li><a href="https://www.linkedin.com/in/tudor-oltean-7a81821a5/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.instagram.com/quikkdekk/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/QuikkDekk?tab=overview&from=2023-07-01&to=2023-07-01" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+<a class="skip-link" href="#work">Skip to work</a>
 
-				<!-- Main -->
-					<div id="main">
+<!-- Cosmic background layers -->
+<div class="sky" aria-hidden="true">
+	<div class="sky__nebula"></div>
+	<div class="sky__nebula sky__nebula--accent"></div>
+	<div class="sky__stars"></div>
+	<div class="sky__ray sky__ray--band"></div>
+	<div class="sky__ray sky__ray--core"></div>
+	<div class="shooting-star shooting-star--a"></div>
+	<div class="shooting-star shooting-star--b"></div>
+</div>
 
-						
+<!-- Nav -->
+<header class="nav" id="top">
+	<div class="nav__inner">
+		<a class="wordmark" href="#top">
+			<span class="wordmark__dot"></span>
+			<span>Tudor Oltean</span>
+		</a>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2>Project OverPower -<br />
-										Game Design Document</h2>
-									</header>
-									<a href="https://docs.google.com/document/d/1pojkkOuuKiTvK03G12vOPZxu2fHUB_9YZi7NFpbERsg/edit?usp=sharing" class="image fit"><img src="images/overpower.png" alt="" /></a>
-									<p>I crafted this Game Design Document to aid in the development process of a unique 3v3v3 multiplayer arena game.
-										This document is meant to grow with the game itself so for now its aimed towards an early prototype.
-										Click on the picture to read the document!</p>
+		<nav class="nav__links" id="nav-panel" aria-label="Primary">
+			<a href="#top" class="is-active">HOME</a>
+			<a href="#work">WORK</a>
+			<a href="#about">ABOUT</a>
+			<a href="#contact">CONTACT</a>
+		</nav>
 
-									
-								</article>
-								<article>
-									<header>
-										
-										<h2>Project OverPower -<br />
-										3v3v3 Game Prototype</h2>
-									</header>
-									<a href="https://www.youtube.com/watch?v=8ffsro7WkHw" class="image fit"><img src="images/pop_topdown_view.jpeg" alt="" /></a>
-									<p>Following the Game Design Document I made an initial prototype for the game in Unity that includes networking using Photon PUN2. For more context please read the GDD. I also
-										plan to keep working on this prototype during my minor so stay tuned for updates!
-									</p>
+		<a class="btn-cv" href="assets/cv.pdf" download>DOWNLOAD CV</a>
 
-									
-								</article>
-								<article>
-									<header>
-										
-										<h2>3D Modelling -<br />
-										Tree House</h2>
-									</header>
-									<a href="https://sketchfab.com/3d-models/tree-house-3e5700c48a304a2783676600011ba51a" class="image fit"><img src="images/treehouse.png" alt="Tree House Model" /></a>
-									<p>Eastern themed tree house I made for my 3D Modelling assignment. Click on the picture for the SketchFab model!</p>
-									
-								</article>
-								<article>
-									<header>
-										
-										<h2>3D Modelling -<br />
-											Neon Arena Kit</h2>
-									</header>
-									<a href="https://sketchfab.com/3d-models/neon-arena-kit-blue-f8229a61f2304caa80d30da4fe938dd8" class="image fit"><img src="images/textures.png" alt="Elven Gazebo Model" /></a>
-									<p>Arena Kit I modelled in Maya and textured in Substance Painter to easily prototype arenas for multiplayer/singleplayer games. Click on the picture for the sketchfab model!</p>
-									
-								</article>
-								<article>
-									<header>
-										<h2>UI/UX -<br />
-										Square Enix's Main Page Redesign</h2>
-									</header>
-									<a href="https://xd.adobe.com/view/7bacbe55-c19f-4812-9602-d46afadfabe7-2eff/" class="image fit"><img src="images/uiux.png" alt="Square Enix Main Page Redesign" /></a>
-									<p>I redesigned Square Enix's main page for my UI/UX assignment. I think this layout is a major improvement from their original <a href="https://www.square-enix-games.com/en_US/home">landing page</a>. Click on the image for the prototype.</p>
-									
-								</article>
-								
-								
-								
-							</section>
-							<!-- Featured Post -->
-							<article id = "about" class="post featured">
-								
-									<h1>About Me</h1>
-									<p>I am a very flexible and resourceful person that can adapt to every concept and solve 
-										challenging problems. Because of my experience with video games I provide a mountain 
-										of ideas and feedback when needed. I grew up playing sports so I know how to find my role within a team.
-										My mind is always open to new ideas and I enjoy learning new stuff everyday.</p>
-									
-								<img src="images/mypicround.png" alt="picture of me" />
-								<h2>Skills</h2>
-										
-											<p>Advanced: Game Design, Mechanics Design, Balancing, Problem solving, Team Collabotration, Communication</p>
-											<p>Proficient: 3D Modelling, UI/UX Design, Game analysis</p>
-											<p>Programming: HTML & CSS</p>
-											<p>Tools and Software: Maya, Adobe Substance Painter, Adobe XD</p>
-							</article>
-						<!-- Footer -->
-							<!-- <footer>
-								<div class="pagination">
-									<a href="#" class="previous">Prev</a>
-									<a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a>
-									<a href="#" class="next">Next</a>
-								</div>
-							</footer> -->
+		<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+			<span></span><span></span><span></span>
+		</button>
+	</div>
+</header>
 
-					</div>
+<main>
 
-				<!-- Footer -->
-					<footer id="footer">
-						
-						<section id = "contact" class="split contact">
-							<h2>contact</h2>
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Ariënsplein 1, 7511 JX <br/>
-									Enschede, Overijssel</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="tel:+31618918147">+31618918147</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:tudor.oltean2002@gmail.com">tudor.oltean2002@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/tudor-oltean-7a81821a5/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://www.instagram.com/quikkdekk/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/QuikkDekk?tab=overview&from=2023-07-01&to=2023-07-01" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+	<!-- Hero -->
+	<section class="hero" id="home">
+		<svg class="constellation constellation--hero" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+			<polyline class="line" points="90,70 250,180 180,300 430,350" fill="none" stroke="rgba(88,216,255,.4)" stroke-width="1.2" stroke-dasharray="400" stroke-dashoffset="400"/>
+			<polyline class="line" points="760,60 890,150 820,290 640,340" fill="none" stroke="rgba(180,139,255,.4)" stroke-width="1.2" stroke-dasharray="400" stroke-dashoffset="400" style="transition-delay:1.5s"/>
+			<circle class="node node--pulse" cx="90" cy="70" r="3.5" fill="#8ee2ff"/>
+			<circle class="node node--pulse" cx="250" cy="180" r="3.5" fill="#8ee2ff" style="animation-delay:.8s"/>
+			<circle class="node" cx="180" cy="300" r="3.5" fill="#a9c7ff"/>
+			<circle class="node" cx="430" cy="350" r="3" fill="#c6b0ff"/>
+			<circle class="node node--pulse" cx="760" cy="60" r="3.5" fill="#c6b0ff" style="animation-duration:5s"/>
+			<circle class="node" cx="890" cy="150" r="3.5" fill="#c6b0ff"/>
+			<circle class="node node--pulse" cx="820" cy="290" r="3.5" fill="#a9c7ff" style="animation-duration:4.5s;animation-delay:1.2s"/>
+			<circle class="node" cx="640" cy="340" r="3" fill="#8ee2ff"/>
+		</svg>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Tudor Oltean 2023</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li><li>Background picture: Stansilav Volskiy</li></ul>
-					</div>
+		<p class="eyebrow hero__eyebrow">SAXION CMGT · GAME DESIGN</p>
+		<h1 class="hero__name">Tudor Oltean</h1>
+		<p class="hero__tagline">Saxion CMGT student that shapes the world through games, 3D Modelling and Game Design.</p>
 
+		<a class="continue" href="#work">
+			<span class="continue__circle">
+				<span class="continue__ring"></span>
+				<span class="continue__arrow" aria-hidden="true">&darr;</span>
+			</span>
+			<span class="continue__label">CONTINUE</span>
+		</a>
+	</section>
+
+	<!-- Selected work -->
+	<section class="work" id="work" aria-labelledby="work-title">
+		<div class="rule">
+			<h2 class="rule__title eyebrow" id="work-title">SELECTED WORK</h2>
+			<span class="rule__count">05</span>
+		</div>
+
+		<!-- 01 — Featured -->
+		<a class="card card--featured tilt" href="https://docs.google.com/document/d/1pojkkOuuKiTvK03G12vOPZxu2fHUB_9YZi7NFpbERsg/edit?usp=sharing" target="_blank" rel="noopener">
+			<div class="card__body">
+				<div class="card__meta">
+					<span class="badge">FEATURED</span>
+					<span class="kicker">GAME DESIGN DOCUMENT</span>
+				</div>
+				<h3 class="card__title card__title--featured">Project OverPower</h3>
+				<p class="card__text">I crafted this Game Design Document to aid in the development process of a unique 3v3v3 multiplayer arena game. This document is meant to grow with the game itself so for now its aimed towards an early prototype. Click on the picture to read the document!</p>
+				<div class="tags">
+					<span class="tag tag--cyan">3v3v3 ARENA</span>
+					<span class="tag tag--blue">SYSTEMS</span>
+					<span class="tag tag--violet">BALANCING</span>
+				</div>
+				<span class="card__cta">READ THE DOCUMENT &rarr;</span>
+			</div>
+			<div class="card__media card__media--featured">
+				<picture>
+					<source srcset="images/overpower.webp" type="image/webp">
+					<img src="images/overpower.png" alt="Cover art of the Project OverPower game design document" loading="lazy" decoding="async">
+				</picture>
+			</div>
+		</a>
+
+		<div class="work__stack">
+			<svg class="constellation constellation--stack" viewBox="0 0 912 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+				<polyline class="line" points="60,40 300,180 120,420 640,520 300,760 820,900" fill="none" stroke="rgba(120,200,255,.45)" stroke-width="1.3" stroke-dasharray="1200" stroke-dashoffset="1200"/>
+				<polyline class="line" points="300,180 640,520" fill="none" stroke="rgba(180,139,255,.4)" stroke-width="1.3" stroke-dasharray="600" stroke-dashoffset="600" style="transition-delay:.8s"/>
+				<circle class="node node--pulse" cx="60" cy="40" r="4" fill="#8ee2ff"/>
+				<circle class="node" cx="300" cy="180" r="4" fill="#a9c7ff"/>
+				<circle class="node node--pulse" cx="120" cy="420" r="4" fill="#c6b0ff" style="animation-duration:5s;animation-delay:1s"/>
+				<circle class="node" cx="640" cy="520" r="4" fill="#8ee2ff"/>
+				<circle class="node node--pulse" cx="300" cy="760" r="4" fill="#a9c7ff" style="animation-duration:4.5s;animation-delay:.6s"/>
+				<circle class="node" cx="820" cy="900" r="4" fill="#c6b0ff"/>
+			</svg>
+
+			<!-- 02 -->
+			<a class="card card--image-left card--cyan tilt" href="https://www.youtube.com/watch?v=8ffsro7WkHw" target="_blank" rel="noopener">
+				<div class="card__media">
+					<picture>
+						<source srcset="images/pop_topdown_view.webp" type="image/webp">
+						<img src="images/pop_topdown_view.jpeg" alt="Top-down view of the Project OverPower Unity prototype" loading="lazy" decoding="async">
+					</picture>
+				</div>
+				<div class="card__body">
+					<span class="card__index">02 · PROTOTYPE</span>
+					<h3 class="card__title">Project OverPower — 3v3v3 Game Prototype</h3>
+					<p class="card__text">Following the Game Design Document I made an initial prototype for the game in Unity that includes networking using Photon PUN2. For more context please read the GDD. I also plan to keep working on this prototype during my minor so stay tuned for updates!</p>
+				</div>
+			</a>
+
+			<!-- 03 -->
+			<a class="card card--image-right card--violet tilt" href="https://sketchfab.com/3d-models/neon-arena-kit-blue-f8229a61f2304caa80d30da4fe938dd8" target="_blank" rel="noopener">
+				<div class="card__body">
+					<span class="card__index">03 · 3D MODELLING</span>
+					<h3 class="card__title">Neon Arena Kit</h3>
+					<p class="card__text">Arena Kit I modelled in Maya and textured in Substance Painter to easily prototype arenas for multiplayer/singleplayer games. Click on the picture for the sketchfab model!</p>
+				</div>
+				<div class="card__media">
+					<picture>
+						<source srcset="images/textures.webp" type="image/webp">
+						<img src="images/textures.png" alt="Neon Arena Kit modular 3D pieces" loading="lazy" decoding="async">
+					</picture>
+				</div>
+			</a>
+
+			<!-- 04 -->
+			<a class="card card--image-left card--cyan tilt" href="https://sketchfab.com/3d-models/tree-house-3e5700c48a304a2783676600011ba51a" target="_blank" rel="noopener">
+				<div class="card__media">
+					<picture>
+						<source srcset="images/treehouse.webp" type="image/webp">
+						<img src="images/treehouse.png" alt="Eastern themed tree house 3D model" loading="lazy" decoding="async">
+					</picture>
+				</div>
+				<div class="card__body">
+					<span class="card__index">04 · 3D MODELLING</span>
+					<h3 class="card__title">Tree House</h3>
+					<p class="card__text">Eastern themed tree house I made for my 3D Modelling assignment. Click on the picture for the SketchFab model!</p>
+				</div>
+			</a>
+
+			<!-- 05 -->
+			<a class="card card--image-right card--violet tilt" href="https://xd.adobe.com/view/7bacbe55-c19f-4812-9602-d46afadfabe7-2eff/" target="_blank" rel="noopener">
+				<div class="card__body">
+					<span class="card__index">05 · UI/UX</span>
+					<h3 class="card__title">Square Enix&rsquo;s Main Page Redesign</h3>
+					<p class="card__text">I redesigned Square Enix&rsquo;s main page for my UI/UX assignment. I think this layout is a major improvement from their original landing page. Click on the image for the prototype.</p>
+				</div>
+				<div class="card__media">
+					<picture>
+						<source srcset="images/uiux.webp" type="image/webp">
+						<img src="images/uiux.png" alt="Square Enix main page redesign concept" loading="lazy" decoding="async">
+					</picture>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- About -->
+	<section class="about" id="about" aria-labelledby="about-title">
+		<div class="about__inner">
+			<div class="about__aside">
+				<picture>
+					<source srcset="images/mypicround.webp" type="image/webp">
+					<img class="about__portrait" src="images/mypicround.png" alt="Portrait of Tudor Oltean" loading="lazy" decoding="async" width="220" height="220">
+				</picture>
+				<div class="about__social">
+					<a href="https://www.linkedin.com/in/tudor-oltean-7a81821a5/" target="_blank" rel="noopener">LINKEDIN</a>
+					<a href="https://www.instagram.com/quikkdekk/" target="_blank" rel="noopener">INSTAGRAM</a>
+					<a href="https://github.com/QuikkDekk" target="_blank" rel="noopener">GITHUB</a>
+				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<div class="about__main">
+				<h2 class="eyebrow eyebrow--cyan" id="about-title">ABOUT ME</h2>
+				<p class="about__bio">I am a very flexible and resourceful person that can adapt to every concept and solve challenging problems. Because of my experience with video games I provide a mountain of ideas and feedback when needed. I grew up playing sports so I know how to find my role within a team. My mind is always open to new ideas and I enjoy learning new stuff everyday.</p>
 
-	</body>
+				<h3 class="about__skills-title">Skills</h3>
+				<div class="skills">
+					<div class="skills__cell">
+						<h4 class="skills__label skills__label--cyan">ADVANCED</h4>
+						<p>Game Design, Mechanics Design, Balancing, Problem solving, Team Collabotration, Communication</p>
+					</div>
+					<div class="skills__cell">
+						<h4 class="skills__label skills__label--blue">PROFICIENT</h4>
+						<p>3D Modelling, UI/UX Design, Game analysis</p>
+					</div>
+					<div class="skills__cell">
+						<h4 class="skills__label skills__label--violet">PROGRAMMING</h4>
+						<p>HTML &amp; CSS</p>
+					</div>
+					<div class="skills__cell">
+						<h4 class="skills__label skills__label--violet">TOOLS &amp; SOFTWARE</h4>
+						<p>Maya, Adobe Substance Painter, Adobe XD</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section class="contact" id="contact" aria-labelledby="contact-title">
+		<div class="contact__inner">
+			<div class="contact__lead">
+				<h2 class="eyebrow eyebrow--cyan" id="contact-title">CONTACT</h2>
+				<p class="contact__headline">Looking for an internship placement</p>
+				<a class="btn-email" href="mailto:tudor.oltean2002@gmail.com">TUDOR.OLTEAN2002@GMAIL.COM</a>
+			</div>
+
+			<div class="contact__details">
+				<div>
+					<h3 class="detail__label">ADDRESS</h3>
+					<p class="detail__value">Ariënsplein 1, 7511 JX<br>Enschede, Overijssel</p>
+				</div>
+				<div>
+					<h3 class="detail__label">PHONE</h3>
+					<p class="detail__value"><a href="tel:+31618918147">+31618918147</a></p>
+				</div>
+				<div>
+					<h3 class="detail__label">CV</h3>
+					<p class="detail__value"><a href="assets/cv.pdf" download>Download (PDF)</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<span>© TUDOR OLTEAN 2026</span>
+		</div>
+	</section>
+
+</main>
+
+<script src="assets/js/site.js" defer></script>
+</body>
 </html>
