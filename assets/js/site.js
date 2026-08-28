@@ -49,8 +49,7 @@
 	var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
 	var sections = navLinks
 		.map(function (a) {
-			var id = a.getAttribute('href').slice(1);
-			return document.getElementById(id === 'top' ? 'home' : id);
+			return document.getElementById(a.getAttribute('href').slice(1));
 		})
 		.filter(Boolean);
 
@@ -78,9 +77,7 @@
 			if (!current) return;
 
 			navLinks.forEach(function (a) {
-				var href = a.getAttribute('href').slice(1);
-				var target = href === 'top' ? 'home' : href;
-				a.classList.toggle('is-active', target === current);
+				a.classList.toggle('is-active', a.getAttribute('href').slice(1) === current);
 			});
 		}
 
