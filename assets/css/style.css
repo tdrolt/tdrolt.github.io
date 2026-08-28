@@ -61,8 +61,10 @@
 html{
 	scroll-behavior:smooth;
 	/* The closed mobile nav panel is parked off the right edge; it is fixed, so
-	   only a clip on the root keeps it out of the page's scrollable width. */
-	overflow-x:hidden;
+	   only a clip on the root keeps it out of the page's scrollable width.
+	   Must be `clip`, not `hidden`: `hidden` makes this a scroll container,
+	   which would stop the sticky nav from sticking. */
+	overflow-x:clip;
 }
 
 body{
@@ -71,7 +73,7 @@ body{
 	color:var(--text);
 	font:300 16px/1.6 var(--body);
 	-webkit-font-smoothing:antialiased;
-	overflow-x:hidden;
+	overflow-x:clip;
 }
 
 h1,h2,h3,h4,p{margin:0}
