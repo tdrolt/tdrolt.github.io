@@ -544,15 +544,20 @@ a{color:inherit;text-decoration:none}
 .tag--violet{border-color:rgba(180,139,255,.28)}
 
 .card__cta{
-	margin-top:10px;
+	margin-top:2px;
 	align-self:flex-start;
-	font:500 12px/1 var(--mono);
+	font:500 11px/1 var(--mono);
 	letter-spacing:.12em;
 	color:var(--cyan-text);
 	border-bottom:1px solid rgba(150,190,255,.45);
 	padding-bottom:6px;
 	transition:color .3s,border-color .3s;
 }
+.card--featured .card__cta{margin-top:10px;font-size:12px}
+
+/* on hover the underline takes on whichever accent the card carries */
+.card:hover .card__cta{color:#fff;border-color:var(--cyan-text)}
+.card--violet:hover .card__cta,
 .card--featured:hover .card__cta{color:#fff;border-color:var(--violet-text)}
 
 .card__media--featured{min-height:330px;border-left:1px solid rgba(255,255,255,.12)}
