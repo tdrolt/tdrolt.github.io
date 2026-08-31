@@ -499,6 +499,24 @@ a{color:inherit;text-decoration:none}
 }
 .card--image-right .card__media{border-left:1px solid var(--line)}
 
+/* ---------- live 3D embeds (cards 03/04) ---------- */
+
+/* An iframe swallows its own pointer events, so these cards cannot be one big
+   link like the others: the title and the CTA carry the link instead. */
+.card__media--embed{background:var(--panel);min-height:340px}
+.card__media--embed iframe{
+	display:block;
+	width:100%;
+	height:100%;
+	min-height:340px;
+	border:0;
+}
+.card--embed .card__title a{transition:color .3s}
+.card--embed .card__title a:hover{color:var(--cyan-text)}
+/* no pointer tilt on these — transforming a parent of an iframe forces the
+   viewer to re-rasterise every frame */
+.card--embed{transition:box-shadow .45s,border-color .45s}
+
 .card__index{
 	font:400 11px/1 var(--mono);
 	letter-spacing:.18em;
@@ -767,6 +785,8 @@ a{color:inherit;text-decoration:none}
 	/* stacked, the media becomes a fixed band instead of a full-height column */
 	.card__media,
 	.card__media img{height:240px;min-height:0}
+	.card__media--embed,
+	.card__media--embed iframe{height:320px;min-height:0}
 	.card__media--featured,
 	.card__media--featured img{height:280px;min-height:0}
 	/* the side-on scrim reads wrong stacked; fade toward the text above instead */
