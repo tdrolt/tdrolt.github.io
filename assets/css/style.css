@@ -420,6 +420,10 @@ a{color:inherit;text-decoration:none}
 }
 
 .constellation .line{
+	/* --len is the path's own length: retracted by exactly that much, the line
+	   is fully hidden, and it draws end to end. site.js measures the real
+	   value and corrects the estimate in the markup. */
+	stroke-dashoffset:var(--len);
 	transition:stroke-dashoffset 7s ease-out;
 }
 .constellation.is-drawn .line{stroke-dashoffset:0}

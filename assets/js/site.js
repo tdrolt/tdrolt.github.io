@@ -129,6 +129,22 @@
 
 	var constellations = document.querySelectorAll('.constellation');
 
+	// The dash lengths in the markup are estimates. Measure each path so the
+	// dash covers it exactly — too short and the line stops partway.
+	constellations.forEach(function (svg) {
+		svg.querySelectorAll('.line').forEach(function (line) {
+			var len;
+			try {
+				len = Math.ceil(line.getTotalLength());
+			} catch (e) {
+				return; // not measurable (e.g. display:none); the estimate stands
+			}
+			if (!len) return;
+			line.setAttribute('stroke-dasharray', len);
+			line.style.setProperty('--len', len);
+		});
+	});
+
 	if (reduceMotion.matches || !('IntersectionObserver' in window)) {
 		constellations.forEach(function (svg) {
 			svg.classList.add('is-drawn');
