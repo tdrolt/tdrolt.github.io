@@ -318,12 +318,23 @@ a{color:inherit;text-decoration:none}
    ========================================================= */
 
 .hero{
+	/* Scroll progress through the first screen, 0 -> 1. Set by site.js;
+	   stays 0 without JS or under reduced motion, which is the large state. */
+	--hero-p:0;
+	--name-lg:118px;
+	--name-sm:86px;
+
 	position:relative;
-	padding-top:110px;
-	padding-bottom:96px;
+	/* fills the screen under the nav, so the name, tagline and arrow are all
+	   that is visible before the first scroll */
+	min-height:calc(100vh - var(--nav-h));
+	min-height:calc(100dvh - var(--nav-h));
+	padding-top:40px;
+	padding-bottom:40px;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	justify-content:center;
 	text-align:center;
 	gap:22px;
 	scroll-margin-top:var(--nav-h);
@@ -335,6 +346,8 @@ a{color:inherit;text-decoration:none}
 
 .hero__name{
 	font:700 86px/.98 var(--display);
+	/* eases from --name-lg down to the resting --name-sm as the hero scrolls by */
+	font-size:calc(var(--name-lg) - (var(--name-lg) - var(--name-sm)) * var(--hero-p));
 	letter-spacing:.005em;
 	background:var(--grad-text);
 	-webkit-background-clip:text;
@@ -356,6 +369,8 @@ a{color:inherit;text-decoration:none}
 	align-items:center;
 	gap:12px;
 	animation:bob 3.4s ease-in-out infinite;
+	/* it is a "scroll down" hint, so it retires once you have */
+	opacity:calc(1 - var(--hero-p));
 }
 .continue__circle{
 	position:relative;
@@ -733,25 +748,27 @@ a{color:inherit;text-decoration:none}
    ========================================================= */
 
 @media (max-width:980px){
-	.hero__name{font-size:56px}
+	.hero{--name-lg:76px;--name-sm:56px}
 	.contact__headline{font-size:36px}
 
 	.card--featured,
 	.card--image-left,
 	.card--image-right{grid-template-columns:1fr}
 
-	/* image always above the text once stacked */
-	.card--image-right .card__media{order:-1;border-left:0;border-bottom:1px solid var(--line)}
-	.card--featured .card__media{order:-1;border-left:0;border-bottom:1px solid rgba(255,255,255,.12)}
+	/* Image always sits below the text once stacked, whichever order the two
+	   are in the markup — so the copy leads on every card. */
+	.card__body{order:1}
+	.card__media{order:2;border-left:0;border-top:1px solid var(--line)}
+	.card__media--featured{border-top-color:rgba(255,255,255,.12)}
 	/* stacked, the media becomes a fixed band instead of a full-height column */
 	.card__media,
 	.card__media img{height:240px;min-height:0}
 	.card__media--featured,
 	.card__media--featured img{height:280px;min-height:0}
-	/* the side-on scrim reads wrong once the image sits above the text */
+	/* the side-on scrim reads wrong stacked; fade toward the text above instead */
 	.card__media--featured::after{
 		background:
-			linear-gradient(180deg,transparent 55%,rgba(12,18,28,.72)),
+			linear-gradient(180deg,rgba(12,18,28,.72),transparent 45%),
 			radial-gradient(300px 240px at 90% 90%,rgba(180,139,255,.28),transparent);
 	}
 
@@ -762,8 +779,7 @@ a{color:inherit;text-decoration:none}
 @media (max-width:736px){
 	:root{--pad:22px}
 
-	.hero{padding-top:70px;padding-bottom:64px}
-	.hero__name{font-size:44px}
+	.hero{--name-lg:56px;--name-sm:44px;padding-top:32px;padding-bottom:32px}
 	.hero__tagline{font-size:16px}
 	.hero__eyebrow{letter-spacing:.24em}
 

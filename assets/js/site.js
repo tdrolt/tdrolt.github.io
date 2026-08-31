@@ -44,6 +44,32 @@
 		});
 	}
 
+	/* ---------- hero settles as you scroll past the first screen ---------- */
+
+	var hero = document.querySelector('.hero');
+
+	if (hero && !reduceMotion.matches) {
+		var heroQueued = false;
+
+		function updateHero() {
+			heroQueued = false;
+			// Fully settled by the time you have scrolled 60% of a screen.
+			var range = Math.max(window.innerHeight * 0.6, 1);
+			var p = Math.min(Math.max(window.scrollY / range, 0), 1);
+			hero.style.setProperty('--hero-p', p.toFixed(3));
+		}
+
+		function queueHero() {
+			if (heroQueued) return;
+			heroQueued = true;
+			requestAnimationFrame(updateHero);
+		}
+
+		addEventListener('scroll', queueHero, { passive: true });
+		addEventListener('resize', queueHero);
+		updateHero(); // a reload partway down the page starts settled
+	}
+
 	/* ---------- active section in the nav ---------- */
 
 	var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
