@@ -305,6 +305,7 @@ a{color:inherit;text-decoration:none}
 .hero,
 .work,
 .about__inner,
+.about__skills,
 .contact__inner,
 .footer{
 	max-width:var(--maxw);
@@ -360,87 +361,6 @@ a{color:inherit;text-decoration:none}
 	font:300 18px/1.6 var(--body);
 	color:var(--text-75);
 	text-wrap:pretty;
-}
-
-/* ---------- keyword ticker ----------
-   Three rows of disciplines, tools and methods drifting under the name.
-   Rows 1 and 3 drift left, row 2 drifts right.
-
-   The HTML ships ONE copy of each keyword; site.js clones a second set and adds
-   .is-ready, which is what turns the animation on. That keeps the crawler (and a
-   screen reader) seeing each term once, and leaves a sensible wrapped list if JS
-   never runs. Spacing lives on the items, not as a track `gap`, so two identical
-   sets are exactly 50% of the track and the loop closes without a jump. */
-
-.ticker{
-	width:100vw;
-	margin-left:calc(50% - 50vw);
-	display:flex;
-	flex-direction:column;
-	gap:9px;
-	padding:2px 0;
-	/* fade both ends so items arrive and leave instead of popping */
-	-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-	mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-}
-
-.ticker__row{display:flex; justify-content:center}
-
-.ticker__track{
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center;
-	max-width:var(--maxw);
-}
-
-.ticker.is-ready .ticker__track{
-	flex-wrap:nowrap;
-	justify-content:flex-start;
-	width:max-content;
-	max-width:none;
-	animation:ticker-l var(--dur,50s) linear infinite;
-	will-change:transform;
-}
-.ticker.is-ready .ticker__track--right{animation-name:ticker-r}
-
-/* hovering a row holds it still so a term can actually be read */
-.ticker__row:hover .ticker__track{animation-play-state:paused}
-
-@keyframes ticker-l{
-	from{transform:translateX(0)}
-	to{transform:translateX(-50%)}
-}
-@keyframes ticker-r{
-	from{transform:translateX(-50%)}
-	to{transform:translateX(0)}
-}
-
-/* display:contents keeps the JS-cloned set as direct flex children of the track,
-   so the two identical halves measure exactly 50% each */
-.ticker__dup{display:contents}
-
-.ticker__item{
-	flex:none;
-	margin:3px 9px 3px 0;
-	padding:6px 12px;
-	font:400 10px/1 var(--mono);
-	letter-spacing:.16em;
-	text-transform:uppercase;
-	white-space:nowrap;
-	color:var(--text-45);
-	border:1px solid var(--line-faint);
-	border-radius:100px;
-	background:rgba(10,15,24,.35);
-}
-.ticker__item--hot{
-	color:var(--cyan-text);
-	border-color:rgba(88,216,255,.30);
-	background:rgba(20,50,72,.30);
-}
-
-@media (max-width:736px){
-	.ticker{gap:7px}
-	.ticker__item{font-size:9px; padding:5px 10px; letter-spacing:.13em; margin-right:7px}
 }
 
 .continue{
@@ -712,7 +632,7 @@ a{color:inherit;text-decoration:none}
 }
 .about__inner{
 	padding-top:56px;
-	padding-bottom:64px;
+	padding-bottom:34px;
 	display:grid;
 	grid-template-columns:260px 1fr;
 	gap:48px;
@@ -742,31 +662,74 @@ a{color:inherit;text-decoration:none}
 	color:var(--text-78);
 	text-wrap:pretty;
 }
+/* "About me" and "Skills" are the same rank, so they share one treatment */
+.about__title,
 .about__skills-title{
-	margin-top:14px;
 	font:700 21px/1.2 var(--display);
 	letter-spacing:.01em;
+	color:var(--text);
 }
 
-.skills{
+/* Skills sits below the about grid rather than inside its right-hand column,
+   so it gets the full page width and the category labels have room of their
+   own on the left. */
+
+.about__skills{
+	padding-bottom:64px;
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+}
+
+.skillset{
+	--sk:var(--cyan-soft);
+	--sk-glow:rgba(88,216,255,.30);
+	--sk-edge:rgba(88,216,255,.22);
 	display:grid;
-	grid-template-columns:1fr 1fr;
-	gap:1px;
-	background:var(--line-nav);
-	border:1px solid var(--line-nav);
+	grid-template-columns:210px 1fr;
+	gap:16px 26px;
+	align-items:baseline;
+	padding-top:20px;
+	border-top:1px solid var(--line-faint);
 }
-.skills__cell{background:var(--panel);padding:16px 18px}
-.skills__label{
-	font:400 10px/1 var(--mono);
+.skillset:first-of-type{margin-top:6px}
+.skillset--blue{
+	--sk:var(--blue);
+	--sk-glow:rgba(140,170,255,.30);
+	--sk-edge:rgba(140,170,255,.22);
+}
+.skillset--violet{
+	--sk:var(--violet-soft);
+	--sk-glow:rgba(180,139,255,.30);
+	--sk-edge:rgba(180,139,255,.22);
+}
+
+.skillset__label{
+	font:400 10px/1.5 var(--mono);
 	letter-spacing:.18em;
-	color:var(--cyan-soft);
+	color:var(--sk);
 }
-.skills__label--blue{color:var(--blue)}
-.skills__label--violet{color:var(--violet-soft)}
-.skills__cell p{
-	margin-top:9px;
-	font:300 14px/1.6 var(--body);
-	color:var(--text-78);
+
+.skillset__items{display:flex;flex-wrap:wrap;gap:9px}
+
+.skill{
+	font:400 10px/1 var(--mono);
+	letter-spacing:.15em;
+	text-transform:uppercase;
+	color:var(--text-75);
+	padding:8px 14px;
+	border:1px solid var(--sk-edge);
+	border-radius:100px;
+	/* faint top-edge highlight over a translucent fill reads as glass, and the
+	   halo picks up whichever accent the category carries */
+	background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(10,15,24,.34));
+	box-shadow:0 0 15px -5px var(--sk-glow),inset 0 1px 0 rgba(255,255,255,.06);
+	transition:box-shadow .28s,border-color .28s,color .28s;
+}
+.skill:hover{
+	color:var(--text);
+	border-color:var(--sk);
+	box-shadow:0 0 24px -3px var(--sk-glow),inset 0 1px 0 rgba(255,255,255,.10);
 }
 
 /* =========================================================
@@ -929,6 +892,9 @@ a{color:inherit;text-decoration:none}
 	.skills{grid-template-columns:1fr}
 
 	.about__portrait{width:180px;height:180px}
+
+	/* not enough width for a label column, so the label sits above its chips */
+	.skillset{grid-template-columns:1fr;gap:11px}
 }
 
 /* =========================================================
@@ -955,20 +921,4 @@ a{color:inherit;text-decoration:none}
 
 	.card{transition:box-shadow .2s,border-color .2s}
 	.card:hover{transform:none !important}
-
-	/* the ticker stops and lays its terms out as a static wrapped list */
-	.ticker.is-ready .ticker__track{
-		animation:none;
-		flex-wrap:wrap;
-		justify-content:center;
-		width:auto;
-		max-width:var(--maxw);
-	}
-	.ticker__dup{display:none}
-	.ticker{
-		width:auto;
-		margin-left:0;
-		-webkit-mask-image:none;
-		mask-image:none;
-	}
 }

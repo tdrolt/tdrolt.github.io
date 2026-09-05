@@ -205,27 +205,4 @@
 		card.addEventListener('pointerleave', reset);
 		card.addEventListener('blur', reset);
 	});
-
-	/* ---------- keyword ticker ---------- */
-
-	// The markup carries one copy of each keyword so it is indexed and announced
-	// once. Clone a second set here purely for the seamless loop, hidden from
-	// assistive tech, then hand the CSS its cue to start animating.
-	var ticker = document.querySelector('.ticker');
-
-	if (ticker) {
-		[].forEach.call(ticker.querySelectorAll('.ticker__track'), function (track) {
-			var dup = document.createElement('span');
-			dup.className = 'ticker__dup';
-			dup.setAttribute('aria-hidden', 'true');
-
-			[].forEach.call(track.children, function (item) {
-				dup.appendChild(item.cloneNode(true));
-			});
-
-			track.appendChild(dup);
-		});
-
-		ticker.classList.add('is-ready');
-	}
 })();
