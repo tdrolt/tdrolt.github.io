@@ -1,5 +1,5 @@
 /* =========================================================
-   Tudor Oltean — portfolio
+   Tudor Oltean , portfolio
    Design tokens, layout and motion for the cosmic redesign.
    ========================================================= */
 
@@ -78,7 +78,7 @@ body{
 
 h1,h2,h3,h4,p{margin:0}
 img{max-width:100%;display:block}
-/* the <picture> wrappers are plumbing only — let the img be the layout box */
+/* the <picture> wrappers are plumbing only , let the img be the layout box */
 picture{display:contents}
 a{color:inherit;text-decoration:none}
 
@@ -159,7 +159,7 @@ a{color:inherit;text-decoration:none}
 	50%{opacity:1}
 }
 
-/* Cosmic ray — 60s loop, ~2s crossing. Deliberately faint. */
+/* Cosmic ray , 60s loop, ~2s crossing. Deliberately faint. */
 .sky__ray{
 	position:absolute;
 	top:-10%;left:0;height:120%;
@@ -362,6 +362,87 @@ a{color:inherit;text-decoration:none}
 	text-wrap:pretty;
 }
 
+/* ---------- keyword ticker ----------
+   Three rows of disciplines, tools and methods drifting under the name.
+   Rows 1 and 3 drift left, row 2 drifts right.
+
+   The HTML ships ONE copy of each keyword; site.js clones a second set and adds
+   .is-ready, which is what turns the animation on. That keeps the crawler (and a
+   screen reader) seeing each term once, and leaves a sensible wrapped list if JS
+   never runs. Spacing lives on the items, not as a track `gap`, so two identical
+   sets are exactly 50% of the track and the loop closes without a jump. */
+
+.ticker{
+	width:100vw;
+	margin-left:calc(50% - 50vw);
+	display:flex;
+	flex-direction:column;
+	gap:9px;
+	padding:2px 0;
+	/* fade both ends so items arrive and leave instead of popping */
+	-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+	mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+}
+
+.ticker__row{display:flex; justify-content:center}
+
+.ticker__track{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	max-width:var(--maxw);
+}
+
+.ticker.is-ready .ticker__track{
+	flex-wrap:nowrap;
+	justify-content:flex-start;
+	width:max-content;
+	max-width:none;
+	animation:ticker-l var(--dur,50s) linear infinite;
+	will-change:transform;
+}
+.ticker.is-ready .ticker__track--right{animation-name:ticker-r}
+
+/* hovering a row holds it still so a term can actually be read */
+.ticker__row:hover .ticker__track{animation-play-state:paused}
+
+@keyframes ticker-l{
+	from{transform:translateX(0)}
+	to{transform:translateX(-50%)}
+}
+@keyframes ticker-r{
+	from{transform:translateX(-50%)}
+	to{transform:translateX(0)}
+}
+
+/* display:contents keeps the JS-cloned set as direct flex children of the track,
+   so the two identical halves measure exactly 50% each */
+.ticker__dup{display:contents}
+
+.ticker__item{
+	flex:none;
+	margin:3px 9px 3px 0;
+	padding:6px 12px;
+	font:400 10px/1 var(--mono);
+	letter-spacing:.16em;
+	text-transform:uppercase;
+	white-space:nowrap;
+	color:var(--text-45);
+	border:1px solid var(--line-faint);
+	border-radius:100px;
+	background:rgba(10,15,24,.35);
+}
+.ticker__item--hot{
+	color:var(--cyan-text);
+	border-color:rgba(88,216,255,.30);
+	background:rgba(20,50,72,.30);
+}
+
+@media (max-width:736px){
+	.ticker{gap:7px}
+	.ticker__item{font-size:9px; padding:5px 10px; letter-spacing:.13em; margin-right:7px}
+}
+
 .continue{
 	margin-top:16px;
 	display:flex;
@@ -513,7 +594,7 @@ a{color:inherit;text-decoration:none}
 }
 .card--embed .card__title a{transition:color .3s}
 .card--embed .card__title a:hover{color:var(--cyan-text)}
-/* no pointer tilt on these — transforming a parent of an iframe forces the
+/* no pointer tilt on these , transforming a parent of an iframe forces the
    viewer to re-rasterise every frame */
 .card--embed{transition:box-shadow .45s,border-color .45s}
 
@@ -531,8 +612,8 @@ a{color:inherit;text-decoration:none}
 }
 
 .card__text{
-	font:300 14px/1.65 var(--body);
-	color:var(--text-68);
+	font:300 15px/1.7 var(--body);
+	color:var(--text-78);
 	text-wrap:pretty;
 }
 
@@ -551,7 +632,7 @@ a{color:inherit;text-decoration:none}
 	box-shadow:var(--shadow-feat);
 }
 .card--featured .card__body{padding:40px 38px;gap:18px}
-.card--featured .card__text{font-size:15px;line-height:1.68;color:var(--text-70)}
+.card--featured .card__text{font-size:16px;line-height:1.7;color:var(--text-78)}
 
 .card__meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 
@@ -778,7 +859,7 @@ a{color:inherit;text-decoration:none}
 	.card--image-right{grid-template-columns:1fr}
 
 	/* Image always sits below the text once stacked, whichever order the two
-	   are in the markup — so the copy leads on every card. */
+	   are in the markup , so the copy leads on every card. */
 	.card__body{order:1}
 	.card__media{order:2;border-left:0;border-top:1px solid var(--line)}
 	.card__media--featured{border-top-color:rgba(255,255,255,.12)}
@@ -874,4 +955,20 @@ a{color:inherit;text-decoration:none}
 
 	.card{transition:box-shadow .2s,border-color .2s}
 	.card:hover{transform:none !important}
+
+	/* the ticker stops and lays its terms out as a static wrapped list */
+	.ticker.is-ready .ticker__track{
+		animation:none;
+		flex-wrap:wrap;
+		justify-content:center;
+		width:auto;
+		max-width:var(--maxw);
+	}
+	.ticker__dup{display:none}
+	.ticker{
+		width:auto;
+		margin-left:0;
+		-webkit-mask-image:none;
+		mask-image:none;
+	}
 }

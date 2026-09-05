@@ -1,4 +1,4 @@
-/* Tudor Oltean — portfolio
+/* Tudor Oltean portfolio
    Mobile nav, active-section highlight, constellation draw, card tilt. */
 
 (function () {
@@ -130,7 +130,7 @@
 	var constellations = document.querySelectorAll('.constellation');
 
 	// The dash lengths in the markup are estimates. Measure each path so the
-	// dash covers it exactly — too short and the line stops partway.
+	// dash covers it exactly; too short and the line stops partway.
 	constellations.forEach(function (svg) {
 		svg.querySelectorAll('.line').forEach(function (line) {
 			var len;
@@ -205,4 +205,27 @@
 		card.addEventListener('pointerleave', reset);
 		card.addEventListener('blur', reset);
 	});
+
+	/* ---------- keyword ticker ---------- */
+
+	// The markup carries one copy of each keyword so it is indexed and announced
+	// once. Clone a second set here purely for the seamless loop, hidden from
+	// assistive tech, then hand the CSS its cue to start animating.
+	var ticker = document.querySelector('.ticker');
+
+	if (ticker) {
+		[].forEach.call(ticker.querySelectorAll('.ticker__track'), function (track) {
+			var dup = document.createElement('span');
+			dup.className = 'ticker__dup';
+			dup.setAttribute('aria-hidden', 'true');
+
+			[].forEach.call(track.children, function (item) {
+				dup.appendChild(item.cloneNode(true));
+			});
+
+			track.appendChild(dup);
+		});
+
+		ticker.classList.add('is-ready');
+	}
 })();

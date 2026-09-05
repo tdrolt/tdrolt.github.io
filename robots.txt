@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# CV build source, not meant to be indexed
+Disallow: /cv-src/
+
+Sitemap: https://tdrolt.github.io/sitemap.xml
