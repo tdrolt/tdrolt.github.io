@@ -997,6 +997,41 @@ a{color:inherit;text-decoration:none}
 }
 .viewer__fallback a{color:var(--cyan-text);text-decoration:underline;text-underline-offset:3px}
 
+.viewer__mobile{display:none}
+.viewer__preview{
+	display:block;
+	position:relative;
+	margin-top:30px;
+	border:1px solid var(--line-nav);
+	border-radius:var(--radius);
+	overflow:hidden;
+	background:var(--panel);
+}
+.viewer__preview img{width:100%;height:auto;display:block}
+/* the page fades out under the button so the call to action stays readable */
+.viewer__preview::after{
+	content:"";
+	position:absolute;
+	left:0;right:0;bottom:0;
+	height:34%;
+	background:linear-gradient(to bottom,transparent,var(--bg) 92%);
+	pointer-events:none;
+}
+.viewer__preview-cta{
+	position:absolute;
+	left:50%;bottom:22px;
+	transform:translateX(-50%);
+	z-index:1;
+	font:500 11px/1 var(--mono);
+	letter-spacing:.14em;
+	color:var(--cyan-text);
+	background:rgba(10,15,24,.9);
+	border:1px solid rgba(88,216,255,.55);
+	border-radius:var(--radius);
+	padding:14px 20px;
+	white-space:nowrap;
+}
+
 .viewer__note{
 	margin-top:18px;
 	font:400 12px/1.6 var(--mono);
@@ -1007,9 +1042,11 @@ a{color:inherit;text-decoration:none}
 @media (max-width:736px){
 	.viewer__head{padding-top:30px}
 	.viewer__headline{align-items:flex-start}
-	/* phones mostly refuse to render a PDF in an iframe, so keep the frame
-	   short and let the buttons above do the work */
-	.viewer__frame{height:62vh}
+	/* Phones mostly refuse to render a PDF in an iframe and just show a blank
+	   grey box, so swap the frame for a real first-page image plus a button
+	   that opens the PDF in the device's own viewer. */
+	.viewer__frame{display:none}
+	.viewer__mobile{display:block}
 	.viewer__btn{padding:13px 15px;font-size:10px}
 }
 

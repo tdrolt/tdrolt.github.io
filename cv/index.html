@@ -76,7 +76,7 @@
 			<div>
 				<p class="eyebrow eyebrow--cyan">CURRICULUM VITAE</p>
 				<h1 class="viewer__title">Tudor Oltean</h1>
-				<p class="viewer__sub">Game design, systems and mechanics, level design. Includes Gavin Yeo&rsquo;s recommendation letter.</p>
+				<p class="viewer__sub">I narrowed this down to the skills that matter most for game design, systems and mechanics, and level design. Page two is a recommendation letter from Gavin Yeo, Design Director at EA / Criterion Games.</p>
 			</div>
 			<div class="viewer__actions">
 				<a class="viewer__btn viewer__btn--primary" href="../assets/cv.pdf" download="Tudor Oltean CV.pdf">DOWNLOAD PDF</a>
@@ -85,8 +85,9 @@
 		</div>
 	</header>
 
-	<!-- Browsers render this with their own PDF viewer. Phones often refuse to,
-	     so the fallback inside the frame is a real link rather than a message. -->
+	<!-- Desktop browsers render this with their own PDF viewer. Phones mostly
+	     refuse to, and a blank grey box is worse than no box, so below 736px the
+	     frame is swapped for a real first-page image and a button. -->
 	<div class="viewer__frame" id="doc">
 		<iframe title="Tudor Oltean CV" src="../assets/cv.pdf#view=FitH"></iframe>
 		<p class="viewer__fallback">
@@ -95,7 +96,16 @@
 		</p>
 	</div>
 
-	<p class="viewer__note">Two pages. The second is a recommendation letter from Gavin Yeo, Design Director at EA / Criterion Games.</p>
+	<div class="viewer__mobile">
+		<a class="viewer__preview" href="../assets/cv.pdf" target="_blank" rel="noopener">
+			<picture>
+				<source srcset="../images/cv-preview.webp" type="image/webp">
+				<img src="../images/cv-preview.jpg" alt="First page of Tudor Oltean&rsquo;s CV" loading="lazy" decoding="async" width="909" height="1287">
+			</picture>
+			<span class="viewer__preview-cta">OPEN THE PDF &rarr;</span>
+		</a>
+	</div>
+
 
 </main>
 
