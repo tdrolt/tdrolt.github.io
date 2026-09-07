@@ -23,7 +23,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/style.css?v=3">
+	<link rel="stylesheet" href="assets/css/style.css?v=4">
 
 	<noscript>
 		<!-- Without JS the slide-in panel can never open, so lay the links out inline. -->
@@ -91,7 +91,7 @@
 
 		<p class="eyebrow hero__eyebrow">GAME DESIGN · SYSTEMS &amp; MECHANICS · LEVEL DESIGN</p>
 		<h1 class="hero__name">Tudor Oltean</h1>
-		<p class="hero__tagline">Systems, mechanics and level design for multiplayer games. Currently driven by a passion project that aims to elevate player-to-player interaction in a competitive environment through skill expression.</p>
+		<p class="hero__tagline">Systems, mechanics and level design for multiplayer games. Currently building a 3v3v3 objective-based arena where aim and build choices decide fights.</p>
 
 		<a class="continue" href="#work">
 			<span class="continue__circle">
@@ -106,24 +106,26 @@
 	<section class="work" id="work" aria-labelledby="work-title">
 		<div class="rule">
 			<h2 class="rule__title eyebrow" id="work-title">SELECTED WORK</h2>
-			<span class="rule__count">05</span>
+			<span class="rule__count">04</span>
 		</div>
 
 		<!-- 01 · Featured -->
-		<a class="card card--featured tilt" href="https://docs.google.com/document/d/1pojkkOuuKiTvK03G12vOPZxu2fHUB_9YZi7NFpbERsg/edit?usp=sharing" target="_blank" rel="noopener">
+		<a class="card card--featured tilt" href="project-overpower/">
 			<div class="card__body">
 				<div class="card__meta">
 					<span class="badge">FEATURED</span>
-					<span class="kicker">GAME DESIGN DOCUMENT</span>
+					<span class="kicker">CASE STUDY</span>
 				</div>
 				<h3 class="card__title card__title--featured">Project OverPower</h3>
-				<p class="card__text">I crafted this Game Design Document to aid in the development process of a unique 3v3v3 multiplayer arena game. This document is meant to grow with the game itself so for now its aimed towards an early prototype.</p>
+				<p class="card__text">A 3v3v3 arena game where gold comes from holding territory instead of kills. I wrote the design document and built the networked prototype in Unity. The case study covers the core loop, the territory economy, how combat works and where the balancing model still needs real data.</p>
 				<div class="tags">
 					<span class="tag tag--cyan">3v3v3 PVP ARENA</span>
+					<span class="tag tag--cyan">UNITY</span>
+					<span class="tag tag--blue">PHOTON PUN2</span>
 					<span class="tag tag--blue">GAME SYSTEMS</span>
 					<span class="tag tag--violet">BALANCING</span>
 				</div>
-				<span class="card__cta">READ THE DOCUMENT &rarr;</span>
+				<span class="card__cta">READ THE CASE STUDY &rarr;</span>
 			</div>
 			<div class="card__media card__media--featured">
 				<picture>
@@ -145,32 +147,11 @@
 				<circle class="node" cx="820" cy="1080" r="4" fill="#c6b0ff"/>
 			</svg>
 
-			<!-- 02 -->
-			<a class="card card--image-left card--cyan tilt" href="https://www.youtube.com/watch?v=8ffsro7WkHw" target="_blank" rel="noopener">
-				<div class="card__media">
-					<picture>
-						<source srcset="images/pop_topdown_view.webp" type="image/webp">
-						<img src="images/pop_topdown_view.jpeg" alt="Top-down view of the Project OverPower 3v3v3 arena prototype built in Unity with Photon networking" loading="lazy" decoding="async" width="1474" height="847">
-					</picture>
-				</div>
-				<div class="card__body">
-					<span class="card__index">02 · PROTOTYPE</span>
-					<h3 class="card__title">Project OP: Game Prototype</h3>
-					<p class="card__text">Following the Game Design Document I made an initial prototype for the game in Unity that includes networking using Photon PUN2. For more context please read the GDD. I also plan to keep working on this prototype during my minor so stay tuned for updates!</p>
-					<div class="tags">
-						<span class="tag tag--cyan">UNITY</span>
-						<span class="tag tag--cyan">C#</span>
-						<span class="tag tag--blue">PHOTON PUN2</span>
-						<span class="tag tag--blue">MULTIPLAYER NETWORKING</span>
-					</div>
-					<span class="card__cta">WATCH THE PROTOTYPE &rarr;</span>
-				</div>
-			</a>
 
-			<!-- 03 -->
+			<!-- 02 -->
 			<article class="card card--image-right card--violet card--embed">
 				<div class="card__body">
-					<span class="card__index">03 · 3D MODELLING</span>
+					<span class="card__index">02 · 3D MODELLING</span>
 					<h3 class="card__title"><a href="https://sketchfab.com/3d-models/neon-arena-kit-blue-f8229a61f2304caa80d30da4fe938dd8" target="_blank" rel="noopener">Neon Arena Kit</a></h3>
 					<p class="card__text">Arena Kit I modelled in Maya and textured in Substance Painter to easily prototype arenas for multiplayer/singleplayer games. Drag the model to look around.</p>
 					<div class="tags">
@@ -189,7 +170,7 @@
 				</div>
 			</article>
 
-			<!-- 04 -->
+			<!-- 03 -->
 			<article class="card card--image-left card--cyan card--embed">
 				<div class="card__media card__media--embed">
 					<iframe title="Tree House: interactive 3D model"
@@ -197,7 +178,7 @@
 						loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
 				</div>
 				<div class="card__body">
-					<span class="card__index">04 · 3D MODELLING</span>
+					<span class="card__index">03 · 3D MODELLING</span>
 					<h3 class="card__title"><a href="https://sketchfab.com/3d-models/tree-house-3e5700c48a304a2783676600011ba51a" target="_blank" rel="noopener">Tree House</a></h3>
 					<p class="card__text">Eastern themed tree house I made for my 3D Modelling assignment. Drag the model to look around.</p>
 					<div class="tags">
@@ -209,12 +190,12 @@
 				</div>
 			</article>
 
-			<!-- 05 -->
+			<!-- 04 -->
 			<a class="card card--image-right card--violet tilt" href="https://xd.adobe.com/view/7bacbe55-c19f-4812-9602-d46afadfabe7-2eff/" target="_blank" rel="noopener">
 				<div class="card__body">
-					<span class="card__index">05 · UI/UX</span>
+					<span class="card__index">04 · UI/UX</span>
 					<h3 class="card__title">Square Enix&rsquo;s Main Page Redesign</h3>
-					<p class="card__text">I redesigned Square Enix&rsquo;s main page for my UI/UX assignment. I think this layout is a major improvement from their original landing page.</p>
+					<p class="card__text">I redesigned Square Enix&rsquo;s main page for my UI/UX assignment. Open it next to their original landing page and the layout change is obvious.</p>
 					<div class="tags">
 						<span class="tag tag--violet">ADOBE XD</span>
 						<span class="tag tag--violet">UI/UX DESIGN</span>
@@ -226,7 +207,7 @@
 				<div class="card__media">
 					<picture>
 						<source srcset="images/uiux.webp" type="image/webp">
-						<img src="images/uiux.jpg" alt="Square Enix homepage redesign concept by Tudor Oltean, a UI/UX case study prototyped in Adobe XD" loading="lazy" decoding="async" width="1200" height="664">
+						<img src="images/uiux.jpg" alt="Square Enix homepage redesign concept, a UI/UX case study prototyped in Adobe XD" loading="lazy" decoding="async" width="1200" height="664">
 					</picture>
 				</div>
 			</a>
@@ -250,7 +231,7 @@
 
 			<div class="about__main">
 				<h2 class="about__title" id="about-title">About me</h2>
-				<p class="about__bio">Saxion CMGT game design student in Enschede, focused on systems and mechanics design, balancing and level design. I author Game Design Documents, prototype them in Unity with C# and Photon networking, and refine them through playtesting. Alongside design I model and texture in Maya and Substance Painter, and design interfaces in Adobe XD. Completed a game design course under Gavin Yeo, Design Director at EA / Criterion Games.</p>
+				<p class="about__bio">Saxion CMGT game design student in Enschede, focused on systems and mechanics design, balancing and level design. Project OverPower went from a shower thought about improving MOBAs and team arena brawlers to a fleshed-out Game Design Document and a networked Unity prototype, built with C# and Photon, that I am still working on. I model and texture in Maya and Substance Painter and design interfaces in Adobe XD, so I can pitch a design to artists and programmers in their own terms and adapt it to their feedback. Years of team sport taught me to find my role fast and to take criticism without taking it personally. Completed a game design course under Gavin Yeo, Design Director at EA / Criterion Games, covering GDD writing, the MDA framework and playtest-driven iteration.</p>
 			</div>
 		</div>
 
@@ -335,6 +316,6 @@
 
 </main>
 
-<script src="assets/js/site.js?v=3" defer></script>
+<script src="assets/js/site.js?v=4" defer></script>
 </body>
 </html>
