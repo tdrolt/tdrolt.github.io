@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tudor Oltean | CV</title>
+	<meta name="description" content="CV of Tudor Oltean, game designer. Systems and mechanics design, balancing and level design. Saxion CMGT, Enschede.">
+	<meta name="theme-color" content="#070b12">
+	<link rel="canonical" href="https://tdrolt.github.io/cv/">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'self'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self'; upgrade-insecure-requests">
+
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://tdrolt.github.io/cv/">
+	<meta property="og:title" content="Tudor Oltean | CV">
+	<meta property="og:description" content="CV of Tudor Oltean, game designer. Systems and mechanics design, balancing and level design. Saxion CMGT, Enschede.">
+	<meta property="og:image" content="https://tdrolt.github.io/images/overpower.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/style.css?v=5">
+
+	<noscript>
+		<style>
+			@media (max-width:736px){
+				.nav__toggle{display:none}
+				.nav__links{position:static;width:auto;height:auto;flex-direction:row;flex-wrap:wrap;
+					gap:16px;padding:0 0 12px;background:none;border:0;transform:none;visibility:visible}
+			}
+		</style>
+	</noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#doc">Skip to the document</a>
+
+<!-- Cosmic background layers -->
+<div class="sky" aria-hidden="true">
+	<div class="sky__nebula"></div>
+	<div class="sky__nebula sky__nebula--accent"></div>
+	<div class="sky__stars"></div>
+	<div class="sky__ray sky__ray--band"></div>
+	<div class="sky__ray sky__ray--core"></div>
+	<div class="shooting-star shooting-star--a"></div>
+	<div class="shooting-star shooting-star--b"></div>
+</div>
+
+<!-- Nav -->
+<header class="nav" id="top">
+	<div class="nav__inner">
+		<a class="wordmark" href="../">
+			<span class="wordmark__dot"></span>
+			<span>Tudor Oltean</span>
+		</a>
+
+		<nav class="nav__links" id="nav-panel" aria-label="Primary">
+			<a href="../#work">WORK</a>
+			<a href="../#contact">CONTACT</a>
+		</nav>
+
+		<a class="btn-cv" href="../cv/">VIEW CV</a>
+
+		<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+			<span></span><span></span><span></span>
+		</button>
+	</div>
+</header>
+
+<main class="viewer">
+
+	<header class="viewer__head">
+		<a class="viewer__back" href="../#contact">&larr; BACK TO CONTACT</a>
+		<div class="viewer__headline">
+			<div>
+				<p class="eyebrow eyebrow--cyan">CURRICULUM VITAE</p>
+				<h1 class="viewer__title">Tudor Oltean</h1>
+				<p class="viewer__sub">Game design, systems and mechanics, level design. Includes Gavin Yeo&rsquo;s recommendation letter.</p>
+			</div>
+			<div class="viewer__actions">
+				<a class="viewer__btn viewer__btn--primary" href="../assets/cv.pdf" download="Tudor Oltean CV.pdf">DOWNLOAD PDF</a>
+				<a class="viewer__btn" href="../assets/cv.pdf" target="_blank" rel="noopener">OPEN FULL SCREEN</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- Browsers render this with their own PDF viewer. Phones often refuse to,
+	     so the fallback inside the frame is a real link rather than a message. -->
+	<div class="viewer__frame" id="doc">
+		<iframe title="Tudor Oltean CV" src="../assets/cv.pdf#view=FitH"></iframe>
+		<p class="viewer__fallback">
+			Your browser will not display the PDF inline.
+			<a href="../assets/cv.pdf" target="_blank" rel="noopener">Open it in a new tab</a>.
+		</p>
+	</div>
+
+	<p class="viewer__note">Two pages. The second is a recommendation letter from Gavin Yeo, Design Director at EA / Criterion Games.</p>
+
+</main>
+
+<script src="../assets/js/site.js?v=5" defer></script>
+</body>
+</html>

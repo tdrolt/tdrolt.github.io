@@ -898,292 +898,119 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================================================
-   Case study page
+   In-site document viewer (GDD, CV)
    ========================================================= */
 
-.cs{
+.viewer{
 	max-width:var(--maxw);
 	margin:0 auto;
-	padding:0 var(--pad);
+	padding:0 var(--pad) 72px;
 }
 
-/* ---------- hero ---------- */
-.cs__hero{padding:52px 0 20px}
-.cs__back{
+.viewer__head{padding:46px 0 28px}
+.viewer__back{
 	display:inline-block;
-	margin-bottom:26px;
 	font:400 11px/1 var(--mono);
 	letter-spacing:.16em;
 	color:var(--text-55);
 	transition:color .25s;
 }
-.cs__back:hover{color:var(--cyan-text)}
+.viewer__back:hover{color:var(--cyan-text)}
 
-.cs__title{
-	margin-top:14px;
-	font:700 clamp(38px,7vw,66px)/1.02 var(--display);
+.viewer__headline{
+	display:flex;
+	align-items:flex-end;
+	justify-content:space-between;
+	gap:28px;
+	flex-wrap:wrap;
+	margin-top:26px;
+	padding-bottom:22px;
+	border-bottom:1px solid var(--line);
+}
+.viewer__title{
+	margin-top:13px;
+	font:700 clamp(30px,5vw,44px)/1.05 var(--display);
 	letter-spacing:.005em;
 	background:var(--grad-text);
 	-webkit-background-clip:text;
 	background-clip:text;
 	color:transparent;
 }
-.cs__lede{
-	margin-top:18px;
-	max-width:640px;
-	font:300 19px/1.6 var(--body);
-	color:var(--text-78);
-	text-wrap:pretty;
-}
-
-.cs__meta{
-	display:grid;
-	grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-	gap:20px 30px;
-	margin-top:36px;
-	padding-top:24px;
-	border-top:1px solid var(--line);
-}
-.cs__meta dt{
-	font:400 10px/1 var(--mono);
-	letter-spacing:.2em;
-	color:var(--text-45);
-}
-.cs__meta dd{
-	margin:9px 0 0;
-	font:300 15px/1.5 var(--body);
-	color:var(--text-78);
-}
-
-/* work-in-progress banner, deliberately stated rather than implied */
-.cs__wip{
-	display:flex;
-	gap:18px;
-	align-items:flex-start;
-	flex-wrap:wrap;
-	margin-top:34px;
-	padding:18px 20px;
-	background:rgba(180,139,255,.06);
-	border:1px solid rgba(180,139,255,.22);
-	border-radius:var(--radius);
-}
-.cs__wip-tag{
-	flex:none;
-	font:400 10px/1 var(--mono);
-	letter-spacing:.18em;
-	color:var(--violet-text);
-	padding:6px 10px;
-	border:1px solid rgba(180,139,255,.35);
-	border-radius:100px;
-}
-.cs__wip p{
-	flex:1 1 340px;
-	font:300 14px/1.65 var(--body);
-	color:var(--text-70);
-}
-
-/* ---------- sections ---------- */
-.cs__section{
-	padding:64px 0 0;
-	scroll-margin-top:var(--nav-h);
-}
-.cs__num{
-	font:400 11px/1 var(--mono);
-	letter-spacing:.2em;
-	color:var(--cyan-eyebrow);
-}
-.cs__h2{
+.viewer__sub{
 	margin-top:12px;
-	font:700 30px/1.15 var(--display);
-	letter-spacing:.005em;
-	color:var(--text);
-	padding-bottom:14px;
-	border-bottom:1px solid var(--line);
-}
-.cs__body{
-	margin-top:22px;
-	display:flex;
-	flex-direction:column;
-	gap:15px;
-	max-width:660px;
-}
-.cs__body p{
-	font:300 16px/1.72 var(--body);
-	color:var(--text-78);
+	max-width:560px;
+	font:300 15px/1.6 var(--body);
+	color:var(--text-70);
 	text-wrap:pretty;
 }
 
-/* ---------- data table ---------- */
-.cs__table{
-	margin-top:28px;
-	border:1px solid var(--line-nav);
-	border-radius:var(--radius);
-	overflow:hidden;
-}
-.cs__tr{
-	display:grid;
-	grid-template-columns:1fr auto auto;
-	gap:18px;
-	align-items:center;
-	padding:13px 18px;
-	background:var(--panel);
-	border-top:1px solid var(--line-faint);
-	font:300 14px/1.4 var(--body);
-	color:var(--text-78);
-}
-.cs__tr:first-child{border-top:0}
-.cs__tr span:not(:first-child){
-	font:400 13px/1 var(--mono);
-	color:var(--cyan-text);
-	text-align:right;
-	min-width:76px;
-}
-.cs__tr--head{
-	background:rgba(255,255,255,.035);
-}
-.cs__tr--head span{
-	font:400 10px/1 var(--mono) !important;
-	letter-spacing:.16em;
-	color:var(--text-45) !important;
-}
-
-/* ---------- callout ---------- */
-.cs__note{
-	margin-top:28px;
-	padding:20px 22px;
-	background:var(--surface);
-	border-left:2px solid var(--cyan);
-	border-radius:var(--radius);
-	max-width:700px;
-}
-.cs__note-tag{
-	display:block;
-	font:400 10px/1 var(--mono);
-	letter-spacing:.18em;
-	color:var(--cyan-text);
-	margin-bottom:11px;
-}
-.cs__note p{
-	font:300 15px/1.7 var(--body);
-	color:var(--text-75);
-}
-
-/* ---------- figures ---------- */
-.cs__figure{
-	margin-top:32px;
-	border:1px solid var(--line-nav);
-	border-radius:var(--radius);
-	overflow:hidden;
-	background:var(--panel);
-}
-.cs__figure img{width:100%;height:auto;display:block}
-.cs__figure figcaption{
-	padding:12px 16px;
-	font:400 11px/1.5 var(--mono);
-	letter-spacing:.06em;
-	color:var(--text-45);
-	border-top:1px solid var(--line-faint);
-}
-/* the loop diagram brings its own frame, so it does not need a box */
-.cs__figure--plain{
-	border:0;
-	background:none;
-	overflow:visible;
-}
-.cs__figure--video{aspect-ratio:16/9}
-.cs__figure--video iframe{width:100%;height:100%;border:0;display:block}
-
-/* ---------- core loop diagram ---------- */
-.loop{
-	width:100%;
-	height:auto;
-	max-width:780px;
-	margin:0 auto;
-	display:block;
-	overflow:visible;
-}
-.loop__name{
-	font:400 13px/1 var(--mono);
-	letter-spacing:.13em;
-}
-.loop__sub{
-	font:300 11.5px/1 var(--body);
-	fill:var(--text-55);
-}
-.loop__num{
-	font:400 8.5px/1 var(--mono);
-	letter-spacing:.1em;
-	fill:var(--text-35);
-}
-.loop__centre{
-	font:400 11px/1 var(--mono);
-	letter-spacing:.24em;
-	fill:var(--text-45);
-}
-.loop__centre-sub{
-	font:300 12px/1 var(--body);
-	fill:var(--text-35);
-}
-
-/* ---------- closing call to action ---------- */
-.cs__cta{
-	margin:76px 0 0;
-	padding:44px 0 64px;
-	border-top:1px solid var(--line);
-}
-.cs__cta-title{
-	font:700 30px/1.15 var(--display);
-	color:var(--text);
-	max-width:520px;
-	text-wrap:balance;
-}
-.cs__cta-text{
-	margin-top:14px;
-	max-width:560px;
-	font:300 16px/1.7 var(--body);
-	color:var(--text-70);
-}
-.cs__cta-row{
-	display:flex;
-	flex-wrap:wrap;
-	gap:12px;
-	margin-top:28px;
-}
-.cs__btn{
+.viewer__actions{display:flex;gap:10px;flex-wrap:wrap}
+.viewer__btn{
 	font:500 11px/1 var(--mono);
 	letter-spacing:.14em;
-	padding:15px 22px;
+	padding:14px 18px;
 	border:1px solid rgba(150,190,255,.4);
 	border-radius:var(--radius);
 	color:var(--text-78);
+	white-space:nowrap;
 	transition:color .3s,border-color .3s,box-shadow .3s;
 }
-.cs__btn:hover{
+.viewer__btn:hover{
 	color:#fff;
 	border-color:var(--cyan);
 	box-shadow:0 0 26px -8px rgba(140,180,255,.7);
 }
-.cs__btn--primary{
-	color:var(--cyan-text);
-	border-color:rgba(88,216,255,.55);
+.viewer__btn--primary{color:var(--cyan-text);border-color:rgba(88,216,255,.55)}
+
+/* The iframe sits on top of the fallback link, so if the browser refuses to
+   render the PDF the link underneath is what shows through. */
+.viewer__frame{
+	position:relative;
+	margin-top:30px;
+	height:min(80vh,1000px);
+	background:var(--panel);
+	border:1px solid var(--line-nav);
+	border-radius:var(--radius);
+	overflow:hidden;
+}
+.viewer__frame iframe{
+	position:relative;
+	z-index:1;
+	display:block;
+	width:100%;
+	height:100%;
+	border:0;
+}
+.viewer__fallback{
+	position:absolute;
+	inset:0;
+	z-index:0;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:6px;
+	flex-wrap:wrap;
+	padding:30px;
+	text-align:center;
+	font:300 15px/1.6 var(--body);
+	color:var(--text-70);
+}
+.viewer__fallback a{color:var(--cyan-text);text-decoration:underline;text-underline-offset:3px}
+
+.viewer__note{
+	margin-top:18px;
+	font:400 12px/1.6 var(--mono);
+	letter-spacing:.04em;
+	color:var(--text-45);
 }
 
 @media (max-width:736px){
-	.cs__hero{padding-top:34px}
-	.cs__section{padding-top:46px}
-	.cs__h2{font-size:25px}
-	.cs__cta-title{font-size:25px}
-	.cs__tr{grid-template-columns:1fr auto;gap:6px 14px}
-	.cs__tr span:nth-child(3){grid-column:2;min-width:0}
-
-	/* Six labelled nodes cannot survive a 375px column, so the diagram keeps a
-	   legible minimum width and scrolls inside its own figure instead. */
-	.cs__figure--plain{
-		overflow-x:auto;
-		overflow-y:hidden;
-		-webkit-overflow-scrolling:touch;
-	}
-	.loop{min-width:600px}
+	.viewer__head{padding-top:30px}
+	.viewer__headline{align-items:flex-start}
+	/* phones mostly refuse to render a PDF in an iframe, so keep the frame
+	   short and let the buttons above do the work */
+	.viewer__frame{height:62vh}
+	.viewer__btn{padding:13px 15px;font-size:10px}
 }
 
 /* =========================================================

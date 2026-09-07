@@ -10,7 +10,7 @@
 	<!-- proves site ownership to Google Search Console; must stay for the property to remain verified -->
 	<meta name="google-site-verification" content="4zDD-Rh3brq5GRPdYzln2cVHqnkBALIWMAALEAbfn98">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://sketchfab.com; upgrade-insecure-requests">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://sketchfab.com https://www.youtube-nocookie.com; upgrade-insecure-requests">
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://tdrolt.github.io/">
@@ -23,7 +23,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/style.css?v=4">
+	<link rel="stylesheet" href="assets/css/style.css?v=5">
 
 	<noscript>
 		<!-- Without JS the slide-in panel can never open, so lay the links out inline. -->
@@ -64,7 +64,7 @@
 			<a href="#contact">CONTACT</a>
 		</nav>
 
-		<a class="btn-cv" href="assets/cv.pdf" download="Tudor Oltean CV.pdf">DOWNLOAD CV</a>
+		<a class="btn-cv" href="cv/">VIEW CV</a>
 
 		<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
 			<span></span><span></span><span></span>
@@ -106,26 +106,24 @@
 	<section class="work" id="work" aria-labelledby="work-title">
 		<div class="rule">
 			<h2 class="rule__title eyebrow" id="work-title">SELECTED WORK</h2>
-			<span class="rule__count">04</span>
+			<span class="rule__count">05</span>
 		</div>
 
 		<!-- 01 · Featured -->
-		<a class="card card--featured tilt" href="project-overpower/">
+		<a class="card card--featured tilt" href="gdd/">
 			<div class="card__body">
 				<div class="card__meta">
 					<span class="badge">FEATURED</span>
-					<span class="kicker">CASE STUDY</span>
+					<span class="kicker">GAME DESIGN DOCUMENT</span>
 				</div>
 				<h3 class="card__title card__title--featured">Project OverPower</h3>
-				<p class="card__text">A 3v3v3 arena game where gold comes from holding territory instead of kills. I wrote the design document and built the networked prototype in Unity. The case study covers the core loop, the territory economy, how combat works and where the balancing model still needs real data.</p>
+				<p class="card__text">I wrote this Game Design Document to guide development of a 3v3v3 multiplayer arena game where gold comes from holding territory instead of kills. It is meant to grow with the game, so right now it is aimed at an early prototype.</p>
 				<div class="tags">
 					<span class="tag tag--cyan">3v3v3 PVP ARENA</span>
-					<span class="tag tag--cyan">UNITY</span>
-					<span class="tag tag--blue">PHOTON PUN2</span>
 					<span class="tag tag--blue">GAME SYSTEMS</span>
 					<span class="tag tag--violet">BALANCING</span>
 				</div>
-				<span class="card__cta">READ THE CASE STUDY &rarr;</span>
+				<span class="card__cta">READ THE DOCUMENT &rarr;</span>
 			</div>
 			<div class="card__media card__media--featured">
 				<picture>
@@ -149,9 +147,30 @@
 
 
 			<!-- 02 -->
+			<article class="card card--image-left card--cyan card--embed">
+				<div class="card__media card__media--embed">
+					<iframe title="Project OverPower second playtest, gameplay recording"
+						src="https://www.youtube-nocookie.com/embed/IR2jML0dAUo?rel=0"
+						loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="card__body">
+					<span class="card__index">02 &middot; PROTOTYPE</span>
+					<h3 class="card__title"><a href="https://youtu.be/IR2jML0dAUo" target="_blank" rel="noopener">Project OP: Game Prototype</a></h3>
+					<p class="card__text">Following the Game Design Document I built the prototype in Unity, with networking through Photon PUN2. This is the second playtest. I am still working on it during my minor.</p>
+					<div class="tags">
+						<span class="tag tag--cyan">UNITY</span>
+						<span class="tag tag--cyan">C#</span>
+						<span class="tag tag--blue">PHOTON PUN2</span>
+						<span class="tag tag--blue">MULTIPLAYER NETWORKING</span>
+					</div>
+					<a class="card__cta" href="https://youtu.be/IR2jML0dAUo" target="_blank" rel="noopener">WATCH ON YOUTUBE &rarr;</a>
+				</div>
+			</article>
+
+			<!-- 03 -->
 			<article class="card card--image-right card--violet card--embed">
 				<div class="card__body">
-					<span class="card__index">02 · 3D MODELLING</span>
+					<span class="card__index">03 · 3D MODELLING</span>
 					<h3 class="card__title"><a href="https://sketchfab.com/3d-models/neon-arena-kit-blue-f8229a61f2304caa80d30da4fe938dd8" target="_blank" rel="noopener">Neon Arena Kit</a></h3>
 					<p class="card__text">Arena Kit I modelled in Maya and textured in Substance Painter to easily prototype arenas for multiplayer/singleplayer games. Drag the model to look around.</p>
 					<div class="tags">
@@ -170,7 +189,7 @@
 				</div>
 			</article>
 
-			<!-- 03 -->
+			<!-- 04 -->
 			<article class="card card--image-left card--cyan card--embed">
 				<div class="card__media card__media--embed">
 					<iframe title="Tree House: interactive 3D model"
@@ -178,7 +197,7 @@
 						loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>
 				</div>
 				<div class="card__body">
-					<span class="card__index">03 · 3D MODELLING</span>
+					<span class="card__index">04 · 3D MODELLING</span>
 					<h3 class="card__title"><a href="https://sketchfab.com/3d-models/tree-house-3e5700c48a304a2783676600011ba51a" target="_blank" rel="noopener">Tree House</a></h3>
 					<p class="card__text">Eastern themed tree house I made for my 3D Modelling assignment. Drag the model to look around.</p>
 					<div class="tags">
@@ -190,10 +209,10 @@
 				</div>
 			</article>
 
-			<!-- 04 -->
+			<!-- 05 -->
 			<a class="card card--image-right card--violet tilt" href="https://xd.adobe.com/view/7bacbe55-c19f-4812-9602-d46afadfabe7-2eff/" target="_blank" rel="noopener">
 				<div class="card__body">
-					<span class="card__index">04 · UI/UX</span>
+					<span class="card__index">05 · UI/UX</span>
 					<h3 class="card__title">Square Enix&rsquo;s Main Page Redesign</h3>
 					<p class="card__text">I redesigned Square Enix&rsquo;s main page for my UI/UX assignment. Open it next to their original landing page and the layout change is obvious.</p>
 					<div class="tags">
@@ -304,7 +323,7 @@
 				</div>
 				<div>
 					<h3 class="detail__label">CV</h3>
-					<p class="detail__value"><a href="assets/cv.pdf" download="Tudor Oltean CV.pdf">Download (PDF)</a><br>Includes Gavin Yeo&rsquo;s recommendation</p>
+					<p class="detail__value"><a href="cv/">Read it here</a> or <a href="assets/cv.pdf" download="Tudor Oltean CV.pdf">download the PDF</a><br>Includes Gavin Yeo&rsquo;s recommendation</p>
 				</div>
 			</div>
 		</div>
@@ -316,6 +335,6 @@
 
 </main>
 
-<script src="assets/js/site.js?v=4" defer></script>
+<script src="assets/js/site.js?v=5" defer></script>
 </body>
 </html>
